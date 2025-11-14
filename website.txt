@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christopher's Services</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #333; color: #fff; padding: 1em; text-align: center; }
+    section { padding: 2em; }
+    .services, .booking { background: #fff; margin: 1em auto; max-width: 600px; padding: 1em; border-radius: 8px; }
+    input, select, textarea { width: 100%; padding: 0.5em; margin: 0.5em 0; }
+    button { background: #333; color: #fff; padding: 0.7em 1.5em; border: none; cursor: pointer; }
+    button:hover { background: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Warnig Elite Services Corp</h1>
+  <p>Professional solutions tailored to your needs</p>
+</header>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Consulting</li>
+    <li>Design & Development</li>
+    <li>Maintenance & Support</li>
+  </ul>
+</section>
+
+<section class="booking">
+  <h2>Book a Service</h2>
+  <form id="bookingForm">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
+
+    <label for="service">Select Service</label>
+    <select id="service" required>
+      <option value="">--Choose--</option>
+      <option value="consulting">Consulting</option>
+      <option value="design">Design & Development</option>
+      <option value="support">Maintenance & Support</option>
+    </select>
+
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" required />
+
+    <label for="message">Additional Info</label>
+    <textarea id="message" rows="4"></textarea>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+  <p id="confirmation" style="color: green;"></p>
+</section>
+
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('confirmation').textContent = "Thank you! Your booking request has been received.";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
